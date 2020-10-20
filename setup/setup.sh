@@ -1,12 +1,9 @@
 #!/usr/bin/env sh
 
-# - uninstall Chrome if still installed as global app
 # - log in with Apple ID to App Store
 # - update existing apps
-# - install XCode, Slack from App Store
+# - install XCode, Slack, and LastPass from App Store
 # - download and install Logitech Options
-# - download and install Chrome
-# - download and install VSCode
 
 # Following forces input not to change when connecting bluetooth devices
 # - Open Audio MIDI Setup under Applications/Utilities
@@ -36,18 +33,16 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install \
-	autoconf \
     awscli \
 	bash \
 	bash-completion \
-    curl \
     gettext \
 	git \
 	git-flow-avh \
+    go \
     htop \
     jq \
     libyaml \
-    mono \
     nginx \
 	node \
 	nvm \
@@ -57,30 +52,35 @@ brew install \
 	shellcheck \
 	tmux \
 	vim \
-	watchman \
-	yarn
+	watchman
 
-# does xquartz need to be installed first?
+brew cask install xquartz
+
 brew cask install \
     android-platform-tools \
+    docker \
+    firefox \
 	font-fira-code \
 	gimp \
+    google-chrome \
 	inkscape \
     iterm2 \
+    karabiner-elements \
     kdiff3 \
-    wine-stable \
-	xquartz \
+    moom \
+    mysqlworkbench \
+    sourcetree \
+    spotify \
+    vagrant \
+    virtualbox \
+    virtualbox-extension-pack \
+    visual-studio-code \
+    zoomus
+
+npm config set prefix "$HOME/.local"
+npm install --global yarn
+pip3 install --user powerline-status
 
 
 # allow repeating keys for VSCode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-
-
-# run kdiff3 dmg, copy to applications first
-hdiutil attach kdiff3-0.9.98-MacOSX-64Bit.dmg
-cp -R /Volumes/kdiff3/kdiff3.app /Applications
-hdiutil detach /Volumes/kdiff3
-ln -s /Applications/kdiff3.app/Contents/MacOS/kdiff3 /usr/local/bin
-
-
-# Download and install Docker, optionally Kitematic
