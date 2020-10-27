@@ -69,6 +69,7 @@ brew cask install \
     kdiff3 \
     moom \
     mysqlworkbench \
+    postman \
     sourcetree \
     spotify \
     vagrant \

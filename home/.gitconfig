@@ -1,23 +1,23 @@
 [user]
 	name = basicdays
 	email = info@basicdays.com
+[core]
+	excludesfile = ~/.gitignore_global
+[commit]
+	template = ~/.stCommitMsg
 [push]
 	default = simple
 [diff]
 	tool = kdiff3
-[merge]
-	tool = kdiff3
 [difftool "vimdiff"]
 	cmd = vim -f -d -c \"wincmd l\" -c \"cd \\\"$GIT_PREFIX\\\"\" \"$LOCAL\" \"$REMOTE\"
-#[core]
-#	askpass = /usr/bin/ksshaskpass
-[core]
-	excludesfile = /Users/paulsanchez/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
+[merge]
+	tool = kdiff3
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[commit]
-	template = /Users/paulsanchez/.stCommitMsg
+[includeIf "gitdir:wip/alertmd/"]
+	path = ~/.config/gitconfig.alertmd.inc
