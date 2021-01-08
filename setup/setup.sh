@@ -34,48 +34,52 @@ xcode-select --install
 
 brew install \
     awscli \
-	bash \
-	bash-completion \
+    # bash \
+    # bash-completion \
     gettext \
-	git \
-	git-flow-avh \
+    # git \
+    # git-crypt \
+    # git-flow-avh \
+    git-lfs \
     go \
     htop \
     jq \
     libyaml \
-    nginx \
-	node \
-	nvm \
-    pipenv \
+    # nginx \
+    node \
+    nvm \
+    # pipenv \
     pyenv \
-	python \
-	shellcheck \
-	tmux \
-	vim \
-	watchman
+    python \
+    shellcheck \
+    tmux \
+    vim \
+    watchman
 
 brew cask install xquartz
 
 brew cask install \
-    android-platform-tools \
+    # android-platform-tools \
     docker \
     firefox \
-	font-fira-code \
-	gimp \
+    font-fira-code \
+    gimp \
     google-chrome \
-	inkscape \
+    inkscape \
     iterm2 \
     karabiner-elements \
     kdiff3 \
     moom \
-    mysqlworkbench \
+    # mysqlworkbench \
     postman \
+    # skype-for-business \
     sourcetree \
     spotify \
-    vagrant \
-    virtualbox \
-    virtualbox-extension-pack \
+    # vagrant \
+    # virtualbox \
+    # virtualbox-extension-pack \
     visual-studio-code \
+    vlc \
     zoomus
 
 npm config set prefix "$HOME/.local"
@@ -85,3 +89,7 @@ pip3 install --user powerline-status
 
 # allow repeating keys for VSCode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+
+# enable tmux-256color term
+tic -xe tmux-256color setup/tmux-256color
