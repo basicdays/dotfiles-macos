@@ -93,3 +93,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # enable tmux-256color term
 tic -xe tmux-256color setup/tmux-256color
+
+
+# enable ssh-add startup script
+launchctl load "$HOME/Library/LaunchAgents/ssh-add.plist"
