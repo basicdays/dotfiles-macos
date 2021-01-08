@@ -13,7 +13,7 @@
 	cmd = vim -f -d -c \"wincmd l\" -c \"cd \\\"$GIT_PREFIX\\\"\" \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [merge]
 	tool = kdiff3
 [mergetool "sourcetree"]
@@ -21,3 +21,10 @@
 	trustExitCode = true
 [includeIf "gitdir:wip/alertmd/"]
 	path = ~/.config/gitconfig.alertmd.inc
+[includeIf "gitdir:wip/sourcingusa/"]
+	path = ~/.config/gitconfig.sourcingusa.inc
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
