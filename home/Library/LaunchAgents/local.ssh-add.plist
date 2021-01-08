@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>Label</key>
-        <string>com.user.loginscript</string>
+        <string>local.ssh-add</string>
         <key>ProgramArguments</key>
         <array>
             <string>/usr/bin/ssh-add</string>
